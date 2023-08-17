@@ -1,0 +1,101 @@
+case_date,lastname,firstname,case_type,case_id,court_fee,jurisdiction,judge_last_name
+2023-01-16,Okafor,Jane,Civil,CR-6190,250,BOSTON,Connor
+2023-08-10,Malcolm,Elena,Civil,CR-3092,100,chicago,James
+2023-06-14,Nasser,Alan,Civil,CR-5947,150,BOSTON,Skaarsgard
+2023-07-17,Smith,Miguel,Family,CR-7727,250,LOS angeles,Brown
+2023-07-25,Kim,John,Criminal,CR-4120,150,BOSTON,Skaarsgard
+2023-07-14,Brown,John,Civil,CR-8850,100,LOS angeles,Brown
+2023-01-19,Nasser,Dmitri,Criminal,CR-2308,100,chicago,Connor
+2023-02-26,Rodriguez,Alan,Criminal,CR-4477,100,chicago,Morgan
+2023-02-10,Brown,Alice,Criminal,CR-9490,200,chicago,Morgan
+2023-09-12,Smith,Nadia,Family,CR-4111,100,LOS angeles,Skaarsgard
+2023-02-25,Kim,Chen,Criminal,CR-9421,150,BOSTON,Oleg
+2023-09-15,Kim,John,Family,CR-3270,200,houston,Morgan
+2023-07-22,Patel,Nadia,Family,CR-1501,200,houston,Skaarsgard
+2023-01-27,Lee,Lakshmi,Family,CR-8321,150,houston,Brown
+2023-01-14,Brown,John,Family,CR-2748,100,LOS angeles,James
+2023-07-13,Malcolm,Miguel,Family,CR-3163,100,LOS angeles,Skaarsgard
+2023-02-26,Smith,Alice,Civil,CR-4296,150,BOSTON,James
+2023-09-25,Patel,Terrance,Criminal,CR-2230,200,houston,Morgan
+2023-02-13,Ivanov,Alan,Family,CR-9353,100,new York,Morgan
+2023-04-18,Chatterjee,Alice,Civil,CR-8786,100,chicago,Skaarsgard
+2023-09-11,Brown,Jane,Criminal,CR-6001,100,LOS angeles,Connor
+2023-02-16,Okafor,Jane,Criminal,CR-9434,250,BOSTON,Oleg
+2023-07-22,Chatterjee,Dmitri,Criminal,CR-1042,100,BOSTON,Brown
+2023-08-28,Smith,Miguel,Family,CR-1427,150,LOS angeles,Brown
+2023-06-14,Johnson,Miguel,Civil,CR-7553,200,chicago,Skaarsgard
+2023-02-24,Ivanov,Chen,Civil,CR-2242,250,LOS angeles,Connor
+2023-06-23,Rodriguez,Terrance,Criminal,CR-6940,250,houston,Connor
+2023-01-10,Johnson,Elena,Civil,CR-4064,150,houston,Oleg
+2023-01-15,Patel,Chen,Civil,CR-3129,100,new York,Morgan
+2023-08-16,Malcolm,Oluwaseun,Civil,CR-2758,150,BOSTON,Connor
+2023-02-24,Ivanov,Lakshmi,Criminal,CR-9562,250,BOSTON,Brown
+2023-05-15,Okafor,Terrance,Criminal,CR-2292,250,BOSTON,Morgan
+2023-06-26,Patel,Jane,Criminal,CR-7889,250,LOS angeles,Brown
+2023-02-14,Rodriguez,John,Family,CR-5178,150,houston,Morgan
+2023-05-15,Patel,Terrance,Civil,CR-5004,150,houston,Morgan
+2023-03-19,Johnson,Alice,Family,CR-2883,200,new York,Morgan
+2023-02-12,Rodriguez,Alan,Family,CR-4416,200,BOSTON,Brown
+2023-07-25,Malcolm,Chen,Civil,CR-9332,200,houston,Morgan
+2023-09-15,Chatterjee,Miguel,Civil,CR-7699,250,BOSTON,Skaarsgard
+2023-03-13,Lee,Nadia,Civil,CR-7258,100,new York,James
+2023-05-27,Brown,Nadia,Civil,CR-7490,200,houston,Morgan
+2023-02-22,Johnson,Alice,Civil,CR-8231,100,chicago,Connor
+2023-03-18,Malcolm,Nadia,Criminal,CR-2720,100,new York,Oleg
+2023-06-11,Brown,Nadia,Criminal,CR-4277,100,BOSTON,Connor
+2023-02-22,Okafor,Oluwaseun,Criminal,CR-9738,100,new York,Skaarsgard
+2023-08-19,Patel,Jane,Civil,CR-2452,250,BOSTON,Skaarsgard
+2023-09-27,Lee,Alan,Family,CR-1899,100,new York,Skaarsgard
+2023-04-21,Malcolm,Dmitri,Family,CR-8404,150,LOS angeles,Brown
+2023-03-10,Chatterjee,Alice,Family,CR-4240,100,LOS angeles,Morgan
+2023-05-13,Kim,Elena,Family,CR-6153,250,chicago,Brown
+2023-09-10,Patel,Alan,Criminal,CR-3485,200,chicago,Oleg
+2023-08-18,Kim,Lakshmi,Criminal,CR-5520,200,LOS angeles,James
+2023-02-21,Patel,Alan,Criminal,CR-9879,250,LOS angeles,Brown
+2023-05-12,Brown,Jane,Criminal,CR-5259,200,new York,James
+2023-01-20,Patel,Oluwaseun,Criminal,CR-8333,100,BOSTON,James
+2023-01-23,Nasser,Chen,Civil,CR-2711,200,LOS angeles,Morgan
+2023-03-12,Brown,Miguel,Family,CR-5100,100,LOS angeles,Morgan
+2023-01-15,Rodriguez,Terrance,Criminal,CR-4849,100,LOS angeles,Morgan
+2023-05-17,Lee,Jane,Criminal,CR-8058,150,new York,Skaarsgard
+2023-04-18,Okafor,Chen,Civil,CR-9076,100,new York,Brown
+2023-02-22,Chatterjee,Lakshmi,Criminal,CR-5230,200,BOSTON,Morgan
+2023-08-18,Brown,John,Criminal,CR-7094,200,LOS angeles,Connor
+2023-08-17,Lee,Oluwaseun,Civil,CR-8915,150,BOSTON,Oleg
+2023-08-18,Malcolm,Alan,Family,CR-9030,100,chicago,Brown
+2023-02-13,Malcolm,Chen,Criminal,CR-1482,150,houston,Morgan
+2023-02-16,Brown,John,Criminal,CR-3535,100,BOSTON,Morgan
+2023-08-20,Johnson,Chen,Criminal,CR-2029,250,houston,James
+2023-01-10,Kim,Alan,Civil,CR-1812,250,houston,Oleg
+2023-02-18,Chatterjee,Alice,Civil,CR-5295,150,chicago,Oleg
+2023-08-25,Lee,Miguel,Criminal,CR-6850,150,LOS angeles,Brown
+2023-05-12,Malcolm,Alan,Criminal,CR-7973,150,BOSTON,Connor
+2023-05-19,Johnson,Chen,Family,CR-5221,200,houston,Skaarsgard
+2023-06-17,Okafor,John,Criminal,CR-4117,250,BOSTON,Oleg
+2023-03-18,Patel,Elena,Family,CR-2368,100,houston,Skaarsgard
+2023-06-22,Rodriguez,Lakshmi,Family,CR-8384,200,new York,Oleg
+2023-07-14,Smith,Miguel,Civil,CR-4476,100,new York,Morgan
+2023-03-26,Brown,Chen,Civil,CR-4545,100,houston,Morgan
+2023-06-22,Chatterjee,Dmitri,Civil,CR-4421,250,houston,Skaarsgard
+2023-03-20,Patel,Miguel,Criminal,CR-6559,150,new York,Morgan
+2023-07-11,Kim,Oluwaseun,Civil,CR-1803,250,BOSTON,Brown
+2023-03-13,Okafor,Elena,Civil,CR-8622,150,new York,Brown
+2023-05-27,Lee,Alice,Criminal,CR-9488,200,LOS angeles,Connor
+2023-05-14,Patel,Alice,Civil,CR-4581,150,chicago,Brown
+2023-06-27,Malcolm,Terrance,Criminal,CR-2388,250,chicago,James
+2023-02-13,Ivanov,Terrance,Criminal,CR-6529,100,LOS angeles,Connor
+2023-01-21,Patel,Terrance,Family,CR-4443,150,BOSTON,Oleg
+2023-09-22,Malcolm,John,Civil,CR-8721,200,new York,Skaarsgard
+2023-02-12,Malcolm,Miguel,Family,CR-3780,250,new York,Oleg
+2023-04-26,Kim,Alan,Criminal,CR-2663,250,new York,Connor
+2023-03-16,Ivanov,Lakshmi,Criminal,CR-8702,150,LOS angeles,Morgan
+2023-07-22,Ivanov,Jane,Criminal,CR-1232,100,BOSTON,Connor
+2023-05-28,Okafor,Nadia,Family,CR-5215,150,houston,Brown
+2023-03-14,Okafor,Oluwaseun,Criminal,CR-6631,250,BOSTON,Skaarsgard
+2023-06-17,Nasser,Alan,Civil,CR-1405,150,BOSTON,Morgan
+2023-08-13,Kim,Oluwaseun,Civil,CR-8816,100,LOS angeles,James
+2023-07-20,Brown,Oluwaseun,Family,CR-2665,150,new York,Morgan
+2023-05-16,Patel,Alan,Family,CR-2874,100,new York,Connor
+2023-07-15,Chatterjee,Nadia,Family,CR-2037,100,houston,James
+2023-04-18,Johnson,Dmitri,Criminal,CR-5402,200,houston,Morgan
+2023-08-14,Johnson,Chen,Civil,CR-3569,250,BOSTON,Morgan

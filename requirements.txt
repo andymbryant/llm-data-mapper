@@ -1,4 +1,6 @@
 langchain
 openai
+ipykernel
+pandas
+tabulate
 gradio
-# ipykernel
