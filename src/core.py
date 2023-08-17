@@ -16,14 +16,9 @@ load_dotenv()
 DATA_DIR_PATH = os.path.join(os.path.dirname(__file__), 'data')
 SYNTHETIC_DATA_DIR_PATH = os.path.join(DATA_DIR_PATH, 'synthetic')
 
-TRANSFORM_MODEL = ChatOpenAI(
+BASE_MODEL = ChatOpenAI(
     model_name='gpt-4',
     temperature=0,
-)
-
-NATURAL_LANGUAGE_MODEL = ChatOpenAI(
-    model_name='gpt-4',
-    temperature=0.1,
 )
 
 def get_dataframes():
@@ -41,19 +36,19 @@ def get_table_mapping(source_df, template_df) -> TableMapping:
         partial_variables={'format_instructions': table_mapping_parser.get_format_instructions()},
     )
 
-    mapping_chain = analyst_prompt | TRANSFORM_MODEL | table_mapping_parser
+    mapping_chain = analyst_prompt | BASE_MODEL | table_mapping_parser
     return mapping_chain.invoke({"source_1_csv_str": get_data_str_from_df_for_prompt(source_df), "target_csv_str": get_data_str_from_df_for_prompt(template_df)})
 
 
 def get_code_spec(table_mapping: TableMapping) -> str:
     writer_prompt = ChatPromptTemplate.from_template(SPEC_WRITER_PROMPT_STR)
-    writer_chain = writer_prompt | NATURAL_LANGUAGE_MODEL | StrOutputParser()
+    writer_chain = writer_prompt | BASE_MODEL | StrOutputParser()
     return writer_chain.invoke({"table_mapping": str(table_mapping)})
 
 
 def get_mapping_code(spec_str: str) -> str:
     engineer_prompt = ChatPromptTemplate.from_template(ENGINEER_PROMPT_STR)
-    engineer_chain = engineer_prompt | TRANSFORM_MODEL | StrOutputParser()
+    engineer_chain = engineer_prompt | BASE_MODEL | StrOutputParser()
     return engineer_chain.invoke({"spec_str": spec_str})
 
 

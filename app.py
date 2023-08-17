@@ -8,7 +8,7 @@ source_df, template_df = get_dataframes()
 
 with gr.Blocks() as demo:
     with gr.Column():
-        gr.Markdown("## To begin, upload a Template CSV and a Source CSV file.")
+        gr.Markdown("# Step 1\n### Upload a Template CSV and a Source CSV file.")
         with gr.Row():
             gr.inputs.File(label="Template", type="file", file_count='single')
             gr.inputs.File(label="Source", type="file", file_count='single')
