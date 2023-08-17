@@ -1,9 +1,0 @@
-,source_column_name,target_column_name,value_transformations,explanation
-0,case_date,CaseDate,NO_TRANSFORM,The 'case_date' column in the source table maps directly to the 'CaseDate' column in the target table with no transformation needed.
-1,lastname,FullName,"Concatenate 'lastname' and 'firstname' from source table, with a space in between, and reverse the order.",The 'lastname' and 'firstname' columns in the source table are combined and reversed to form the 'FullName' column in the target table.
-2,firstname,FullName,"Concatenate 'lastname' and 'firstname' from source table, with a space in between, and reverse the order.",The 'lastname' and 'firstname' columns in the source table are combined and reversed to form the 'FullName' column in the target table.
-3,case_type,CaseType,"Correct spelling errors in source table ('Familly' to 'Family', 'Criminl' to 'Criminal', 'Civl' to 'Civil').","The 'case_type' column in the source table maps to the 'CaseType' column in the target table, with spelling corrections needed."
-4,case_id,CaseID,Replace 'CR-' prefix in source table with 'CASE-' prefix.,"The 'case_id' column in the source table maps to the 'CaseID' column in the target table, with a prefix change needed."
-5,court_fee,Fee,NO_TRANSFORM,The 'court_fee' column in the source table maps directly to the 'Fee' column in the target table with no transformation needed.
-6,jurisdiction,Jurisdiction,Capitalize the first letter of each word in the 'jurisdiction' column of the source table.,"The 'jurisdiction' column in the source table maps to the 'Jurisdiction' column in the target table, with capitalization needed."
-7,judge_last_name,NO_TARGET,NO_TRANSFORM,The 'judge_last_name' column in the source table does not have a corresponding column in the target table and can be ignored.

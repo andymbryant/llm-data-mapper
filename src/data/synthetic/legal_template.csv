@@ -1,0 +1,101 @@
+CaseDate,FullName,CaseType,CaseID,Fee,Jurisdiction
+2023-01-16,Jane Okafor,Civil,CASE-6190,250,Boston
+2023-08-10,Elena Malcolm,Civil,CASE-3092,100,Chicago
+2023-06-14,Alan Nasser,Civil,CASE-5947,150,Boston
+2023-07-17,Miguel Smith,Family,CASE-7727,250,Los Angeles
+2023-07-25,John Kim,Criminal,CASE-4120,150,Boston
+2023-07-14,John Brown,Civil,CASE-8850,100,Los Angeles
+2023-01-19,Dmitri Nasser,Criminal,CASE-2308,100,Chicago
+2023-02-26,Alan Rodriguez,Criminal,CASE-4477,100,Chicago
+2023-02-10,Alice Brown,Criminal,CASE-9490,200,Chicago
+2023-09-12,Nadia Smith,Family,CASE-4111,100,Los Angeles
+2023-02-25,Chen Kim,Criminal,CASE-9421,150,Boston
+2023-09-15,John Kim,Family,CASE-3270,200,Houston
+2023-07-22,Nadia Patel,Family,CASE-1501,200,Houston
+2023-01-27,Lakshmi Lee,Family,CASE-8321,150,Houston
+2023-01-14,John Brown,Family,CASE-2748,100,Los Angeles
+2023-07-13,Miguel Malcolm,Family,CASE-3163,100,Los Angeles
+2023-02-26,Alice Smith,Civil,CASE-4296,150,Boston
+2023-09-25,Terrance Patel,Criminal,CASE-2230,200,Houston
+2023-02-13,Alan Ivanov,Family,CASE-9353,100,New York
+2023-04-18,Alice Chatterjee,Civil,CASE-8786,100,Chicago
+2023-09-11,Jane Brown,Criminal,CASE-6001,100,Los Angeles
+2023-02-16,Jane Okafor,Criminal,CASE-9434,250,Boston
+2023-07-22,Dmitri Chatterjee,Criminal,CASE-1042,100,Boston
+2023-08-28,Miguel Smith,Family,CASE-1427,150,Los Angeles
+2023-06-14,Miguel Johnson,Civil,CASE-7553,200,Chicago
+2023-02-24,Chen Ivanov,Civil,CASE-2242,250,Los Angeles
+2023-06-23,Terrance Rodriguez,Criminal,CASE-6940,250,Houston
+2023-01-10,Elena Johnson,Civil,CASE-4064,150,Houston
+2023-01-15,Chen Patel,Civil,CASE-3129,100,New York
+2023-08-16,Oluwaseun Malcolm,Civil,CASE-2758,150,Boston
+2023-02-24,Lakshmi Ivanov,Criminal,CASE-9562,250,Boston
+2023-05-15,Terrance Okafor,Criminal,CASE-2292,250,Boston
+2023-06-26,Jane Patel,Criminal,CASE-7889,250,Los Angeles
+2023-02-14,John Rodriguez,Family,CASE-5178,150,Houston
+2023-05-15,Terrance Patel,Civil,CASE-5004,150,Houston
+2023-03-19,Alice Johnson,Family,CASE-2883,200,New York
+2023-02-12,Alan Rodriguez,Family,CASE-4416,200,Boston
+2023-07-25,Chen Malcolm,Civil,CASE-9332,200,Houston
+2023-09-15,Miguel Chatterjee,Civil,CASE-7699,250,Boston
+2023-03-13,Nadia Lee,Civil,CASE-7258,100,New York
+2023-05-27,Nadia Brown,Civil,CASE-7490,200,Houston
+2023-02-22,Alice Johnson,Civil,CASE-8231,100,Chicago
+2023-03-18,Nadia Malcolm,Criminal,CASE-2720,100,New York
+2023-06-11,Nadia Brown,Criminal,CASE-4277,100,Boston
+2023-02-22,Oluwaseun Okafor,Criminal,CASE-9738,100,New York
+2023-08-19,Jane Patel,Civil,CASE-2452,250,Boston
+2023-09-27,Alan Lee,Family,CASE-1899,100,New York
+2023-04-21,Dmitri Malcolm,Family,CASE-8404,150,Los Angeles
+2023-03-10,Alice Chatterjee,Family,CASE-4240,100,Los Angeles
+2023-05-13,Elena Kim,Family,CASE-6153,250,Chicago
+2023-09-10,Alan Patel,Criminal,CASE-3485,200,Chicago
+2023-08-18,Lakshmi Kim,Criminal,CASE-5520,200,Los Angeles
+2023-02-21,Alan Patel,Criminal,CASE-9879,250,Los Angeles
+2023-05-12,Jane Brown,Criminal,CASE-5259,200,New York
+2023-01-20,Oluwaseun Patel,Criminal,CASE-8333,100,Boston
+2023-01-23,Chen Nasser,Civil,CASE-2711,200,Los Angeles
+2023-03-12,Miguel Brown,Family,CASE-5100,100,Los Angeles
+2023-01-15,Terrance Rodriguez,Criminal,CASE-4849,100,Los Angeles
+2023-05-17,Jane Lee,Criminal,CASE-8058,150,New York
+2023-04-18,Chen Okafor,Civil,CASE-9076,100,New York
+2023-02-22,Lakshmi Chatterjee,Criminal,CASE-5230,200,Boston
+2023-08-18,John Brown,Criminal,CASE-7094,200,Los Angeles
+2023-08-17,Oluwaseun Lee,Civil,CASE-8915,150,Boston
+2023-08-18,Alan Malcolm,Family,CASE-9030,100,Chicago
+2023-02-13,Chen Malcolm,Criminal,CASE-1482,150,Houston
+2023-02-16,John Brown,Criminal,CASE-3535,100,Boston
+2023-08-20,Chen Johnson,Criminal,CASE-2029,250,Houston
+2023-01-10,Alan Kim,Civil,CASE-1812,250,Houston
+2023-02-18,Alice Chatterjee,Civil,CASE-5295,150,Chicago
+2023-08-25,Miguel Lee,Criminal,CASE-6850,150,Los Angeles
+2023-05-12,Alan Malcolm,Criminal,CASE-7973,150,Boston
+2023-05-19,Chen Johnson,Family,CASE-5221,200,Houston
+2023-06-17,John Okafor,Criminal,CASE-4117,250,Boston
+2023-03-18,Elena Patel,Family,CASE-2368,100,Houston
+2023-06-22,Lakshmi Rodriguez,Family,CASE-8384,200,New York
+2023-07-14,Miguel Smith,Civil,CASE-4476,100,New York
+2023-03-26,Chen Brown,Civil,CASE-4545,100,Houston
+2023-06-22,Dmitri Chatterjee,Civil,CASE-4421,250,Houston
+2023-03-20,Miguel Patel,Criminal,CASE-6559,150,New York
+2023-07-11,Oluwaseun Kim,Civil,CASE-1803,250,Boston
+2023-03-13,Elena Okafor,Civil,CASE-8622,150,New York
+2023-05-27,Alice Lee,Criminal,CASE-9488,200,Los Angeles
+2023-05-14,Alice Patel,Civil,CASE-4581,150,Chicago
+2023-06-27,Terrance Malcolm,Criminal,CASE-2388,250,Chicago
+2023-02-13,Terrance Ivanov,Criminal,CASE-6529,100,Los Angeles
+2023-01-21,Terrance Patel,Family,CASE-4443,150,Boston
+2023-09-22,John Malcolm,Civil,CASE-8721,200,New York
+2023-02-12,Miguel Malcolm,Family,CASE-3780,250,New York
+2023-04-26,Alan Kim,Criminal,CASE-2663,250,New York
+2023-03-16,Lakshmi Ivanov,Criminal,CASE-8702,150,Los Angeles
+2023-07-22,Jane Ivanov,Criminal,CASE-1232,100,Boston
+2023-05-28,Nadia Okafor,Family,CASE-5215,150,Houston
+2023-03-14,Oluwaseun Okafor,Criminal,CASE-6631,250,Boston
+2023-06-17,Alan Nasser,Civil,CASE-1405,150,Boston
+2023-08-13,Oluwaseun Kim,Civil,CASE-8816,100,Los Angeles
+2023-07-20,Oluwaseun Brown,Family,CASE-2665,150,New York
+2023-05-16,Alan Patel,Family,CASE-2874,100,New York
+2023-07-15,Nadia Chatterjee,Family,CASE-2037,100,Houston
+2023-04-18,Dmitri Johnson,Criminal,CASE-5402,200,Houston
+2023-08-14,Chen Johnson,Civil,CASE-3569,250,Boston
