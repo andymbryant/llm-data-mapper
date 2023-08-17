@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 import pandas as pd
 from langchain.output_parsers import PydanticOutputParser
 from langchain.prompts import ChatPromptTemplate
@@ -10,7 +11,7 @@ from src.types import TableMapping
 from src.vars import NUM_ROWS_TO_RETURN
 from src.prompt import DATA_SCIENTIST_PROMPT_STR, SPEC_WRITER_PROMPT_STR, ENGINEER_PROMPT_STR
 
-os.environ["OPENAI_API_KEY"] = "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"
+load_dotenv()
 
 DATA_DIR_PATH = os.path.join(os.path.dirname(__file__), 'data')
 SYNTHETIC_DATA_DIR_PATH = os.path.join(DATA_DIR_PATH, 'synthetic')
@@ -20,7 +21,7 @@ TRANSFORM_MODEL = ChatOpenAI(
     temperature=0,
 )
 
-natural_language_model = ChatOpenAI(
+NATURAL_LANGUAGE_MODEL = ChatOpenAI(
     model_name='gpt-4',
     temperature=0.1,
 )
@@ -46,7 +47,7 @@ def get_table_mapping(source_df, template_df) -> TableMapping:
 
 def get_code_spec(table_mapping: TableMapping) -> str:
     writer_prompt = ChatPromptTemplate.from_template(SPEC_WRITER_PROMPT_STR)
-    writer_chain = writer_prompt | natural_language_model | StrOutputParser()
+    writer_chain = writer_prompt | NATURAL_LANGUAGE_MODEL | StrOutputParser()
     return writer_chain.invoke({"table_mapping": str(table_mapping)})
 
 

@@ -4,3 +4,4 @@ ipykernel
 pandas
 tabulate
 gradio
+python-dotenv
