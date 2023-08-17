@@ -12,6 +12,7 @@ with gr.Blocks() as demo:
         with gr.Row():
             gr.inputs.File(label="Template", type="file", file_count='single')
             gr.inputs.File(label="Source", type="file", file_count='single')
+        
 
     with gr.Column():
         gr.Markdown("## Mapping from Source to Template")
