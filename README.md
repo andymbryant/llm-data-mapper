@@ -12,6 +12,8 @@ sdk: gradio
 ## Overview
 This app uses an LLM to generate a mapping between a source and target (template) schema, executing python code to complete the transformation. Of course, there are more efficient ways to create such a pipeline, but this is mostly an exercise in how an LLM would perform and how it might contribute to a human-in-the-loop ETL user experience.
 
+A guiding principle is that the LLM should do the mapping, not the transforming. For large datasets, we will quickly bump up against the constraint of time, token cost, and context window length.
+
 ## Tech
 - Langchain 
 - OpenAI (GPT-4 ChatCompletion)
