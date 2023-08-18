@@ -1,9 +1,0 @@
-,source_column_name,target_column_name,value_transformations,explanation
-0,case_date,CaseDate,NO_TRANSFORM,The 'case_date' column in the source directly maps to the 'CaseDate' column in the target with no transformation needed.
-1,lastname,FullName,"Concatenate 'lastname' and 'firstname' from source, with a space in between, and 'firstname' preceding 'lastname'.","The 'lastname' and 'firstname' columns in the source are combined to form the 'FullName' column in the target, with 'firstname' coming first."
-2,firstname,FullName,"Concatenate 'firstname' and 'lastname' from source, with a space in between, and 'firstname' preceding 'lastname'.","The 'firstname' and 'lastname' columns in the source are combined to form the 'FullName' column in the target, with 'firstname' coming first."
-3,case_type,CaseType,NO_TRANSFORM,The 'case_type' column in the source directly maps to the 'CaseType' column in the target with no transformation needed.
-4,case_id,CaseID,Replace 'CR-' prefix in source with 'CASE-' in target.,"The 'case_id' column in the source maps to the 'CaseID' column in the target, with the 'CR-' prefix replaced by 'CASE-'."
-5,court_fee,Fee,NO_TRANSFORM,The 'court_fee' column in the source directly maps to the 'Fee' column in the target with no transformation needed.
-6,jurisdiction,Jurisdiction,Capitalize the first letter of each word in the source.,"The 'jurisdiction' column in the source maps to the 'Jurisdiction' column in the target, with the first letter of each word capitalized."
-7,judge_last_name,NO_TARGET,NO_TRANSFORM,The 'judge_last_name' column in the source does not have a corresponding column in the target and can be ignored.
