@@ -76,12 +76,12 @@ def generate_mapping_code(table_mapping_df) -> str:
     return engineer_chain.invoke({"table_mapping": str(table_mapping_df.to_dict())})
 
 
-def process_csv_text(temp_file):
-    """Process a CSV file into a dataframe, either from a string or a file."""
-    if isinstance(temp_file, str):
-        df = pd.read_csv(io.StringIO(temp_file))
+def process_csv_text(value):
+    """Process a CSV file into a dataframe, either from a string path or a file."""
+    if isinstance(value, str):
+        df = pd.read_csv(value)
     else:
-        df = pd.read_csv(temp_file.name)
+        df = pd.read_csv(value.name)
     return df
 
 

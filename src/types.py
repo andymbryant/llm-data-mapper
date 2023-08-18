@@ -9,7 +9,7 @@ class TableMappingEntry(BaseModel):
     )
     target_column_name: str = Field(
         ...,
-        description="Name of the column in the target table, to which the source column maps.",
+        description="Name of the column in the target table, to which the source column maps. If there is no target_column, write 'DROP_COLUMN'.",
     )
     value_transformations: str = Field(
         ...,

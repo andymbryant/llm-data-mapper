@@ -8,9 +8,14 @@ from src.core import (
 
 MAX_ROWS = 10
 
-
+import pandas as pd
 def generate_step_markdown(step_number: int, subtitle: str, description: str = None):
     return gr.Markdown(f"# Step {step_number}\n\n ### {subtitle}\n{description}")
+
+example_df = pd.read_csv('./src/data/synthetic/legal_entries_a.csv')
+def load_example_template(template_df, example_df):
+    return template_df.update(example_df)
+
 
 
 # TODO: use tempfile
@@ -20,10 +25,11 @@ def export_csv(df, filename):
 
 
 # TODO: use tempfile
-def export_text(val, filename):
+def export_text(content, filename):
     with open(filename, "w") as f:
-        f.write(val)
+        f.write(content)
     return gr.File.update(value=filename, visible=True)
+
 
 
 with gr.Blocks() as demo:
@@ -42,21 +48,33 @@ with gr.Blocks() as demo:
                 label="Upload Template File",
                 file_types=[".csv"],
                 file_count="single",
+                variant="primary",
+            )
+            load_template_btn = gr.Button(
+                value="Load Example Template File",
+                variant="secondary",
             )
             template_df = gr.Dataframe(max_rows=MAX_ROWS, interactive=False)
             upload_template_btn.upload(
                 fn=process_csv_text, inputs=upload_template_btn, outputs=template_df
             )
+            load_template_btn.click(lambda _: pd.read_csv('./src/data/actual/template.csv'), upload_template_btn, template_df)
         with gr.Column():
             upload_source_button = gr.UploadButton(
                 label="Upload Source File",
                 file_types=[".csv"],
                 file_count="single",
+                variant="primary",
+            )
+            load_source_button = gr.Button(
+                value="Load Example Source File",
+                variant="secondary",
             )
             source_df = gr.Dataframe(max_rows=MAX_ROWS, interactive=False)
             upload_source_button.upload(
                 fn=process_csv_text, inputs=upload_source_button, outputs=source_df
             )
+            load_source_button.click(lambda _: pd.read_csv('./src/data/actual/table_A.csv'), upload_source_button, source_df)
 
     # STEP 2
     generate_step_markdown(

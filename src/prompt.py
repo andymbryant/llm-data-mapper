@@ -12,10 +12,10 @@ Head of `target_csv`:
 Your job is to generate a thorough, precise summary of how `source_csv` should be transformed to adhere exactly to the `target_csv` schema.
 
 For each column in the `source_csv`, you must communicate which column in the `target_csv` it maps to, and how the values in the `source_csv` column should be transformed to match those in the `target_csv`.
-You can assume the rows are aligned: that is, the first row in `source_csv` corresponds to the first row in `target_csv`, and so on.
+You should consider the semantic meaning of the columns, not just the character similarity or positioning.
+If there is no corresponding column in the `target_csv`, you should write 'DROP_COLUMN' in the `target_csv` column.
 
-Remember:
-1. Which column in `target_csv` it maps to. You should consider the semantic meaning of the columns, not just the character similarity. 
+You can assume the rows are aligned: that is, the first row in `source_csv` corresponds to the first row in `target_csv`, and so on.
 
 Example mappings:
 - 'MunICipality' in `source_csv` should map to 'City' in `target_csv`.
