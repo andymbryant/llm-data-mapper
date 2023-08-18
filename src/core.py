@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 import pandas as pd
+import io
 from langchain.output_parsers import PydanticOutputParser
 from langchain.prompts import ChatPromptTemplate
 from langchain.tools import PythonAstREPLTool
@@ -29,7 +30,7 @@ def get_dataframes():
 def get_data_str_from_df_for_prompt(df, num_rows_to_return=NUM_ROWS_TO_RETURN):
     return f'<df>\n{df.head(num_rows_to_return).to_markdown()}\n</df>'
 
-def get_table_mapping(source_df, template_df) -> TableMapping:
+def get_table_mapping(source_df, template_df):
     table_mapping_parser = PydanticOutputParser(pydantic_object=TableMapping)
     analyst_prompt = ChatPromptTemplate.from_template(
         template=DATA_SCIENTIST_PROMPT_STR, 
@@ -37,24 +38,27 @@ def get_table_mapping(source_df, template_df) -> TableMapping:
     )
 
     mapping_chain = analyst_prompt | BASE_MODEL | table_mapping_parser
-    return mapping_chain.invoke({"source_1_csv_str": get_data_str_from_df_for_prompt(source_df), "target_csv_str": get_data_str_from_df_for_prompt(template_df)})
+    table_mapping: TableMapping = mapping_chain.invoke({"source_1_csv_str": get_data_str_from_df_for_prompt(source_df), "target_csv_str": get_data_str_from_df_for_prompt(template_df)})
+    return pd.DataFrame(table_mapping.dict()['table_mappings'])
 
-
-def get_code_spec(table_mapping: TableMapping) -> str:
-    writer_prompt = ChatPromptTemplate.from_template(SPEC_WRITER_PROMPT_STR)
-    writer_chain = writer_prompt | BASE_MODEL | StrOutputParser()
-    return writer_chain.invoke({"table_mapping": str(table_mapping)})
-
-
-def get_mapping_code(spec_str: str) -> str:
-    engineer_prompt = ChatPromptTemplate.from_template(ENGINEER_PROMPT_STR)
-    engineer_chain = engineer_prompt | BASE_MODEL | StrOutputParser()
-    return engineer_chain.invoke({"spec_str": spec_str})
-
-
-def sanitize_python_output(text: str):
+def _sanitize_python_output(text: str):
     _, after = text.split("```python")
     return after.split("```")[0]
 
-def save_csv_file(df, filename):
-    df.to_csv(os.path.join(DATA_DIR_PATH, 'output', filename) + '.csv')
+def generate_mapping_code(table_mapping_df) -> str:
+    writer_prompt = ChatPromptTemplate.from_template(SPEC_WRITER_PROMPT_STR)
+    engineer_prompt = ChatPromptTemplate.from_template(ENGINEER_PROMPT_STR)
+    
+    writer_chain = writer_prompt | BASE_MODEL | StrOutputParser()
+    engineer_chain = {"spec_str": writer_chain} | engineer_prompt | BASE_MODEL | StrOutputParser() | _sanitize_python_output
+    return engineer_chain.invoke({"table_mapping": str(table_mapping_df.to_dict())})
+
+def process_csv_text(temp_file):
+    if isinstance(temp_file, str):
+      df = pd.read_csv(io.StringIO(temp_file))
+    else:
+      df = pd.read_csv(temp_file.name)
+    return df
+
+def transform_source(source_df, code_text: str):
+    return PythonAstREPLTool(locals={'source_df': source_df}).run(code_text)

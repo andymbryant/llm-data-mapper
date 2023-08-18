@@ -45,7 +45,7 @@ Your job is to write a plaintext spec for a python script for a software enginee
 This document must include 100% of the information your employee needs to write a successful script to transform source_df to target_df.
 However, DO NOT include the original table_mapping. Your job is to translate everything into natural language.
 
-Here is a stringified pydantic object that describes the mapping and the transformation steps:
+Here is a stringified python dictionary that describes the mapping and the transformation steps:
 
 {table_mapping}
 
@@ -55,21 +55,20 @@ This document should be formatted like a technical document in plaintext. Do not
 
 This document must include:
 - Overview
-- Input (source_df), Output (target_df)
+- Input (source_df)
+- Output (target_df)
 - Exact column mapping
 - Exact transformation steps for each column
 - Precise instructions for what this script should do
-- Script input: Pandas Dataframe named `source_df`.
-- Script output: Pandas Dataframe named `target_df`.
 - Do not modify the source_df. Create a new dataframe named target_df.
 - This script should never include the source data. It should only include the transormations required to create the target_df.
-- Return the target_df.
+- Return the target_df
 
 You will never see this employee. They cannot contact you. You will never see their code. You must include 100% of the information they need to write a successful script.
 Remember:
 - Clean: No extra information, no formatting aside from plaintext
 - Concise: Your employees benefit from brevity
-- Precise: your words must be unambiguous, exact, and full represent a perfect translation of the table_mapping object.
+- Precise: your words must be unambiguous, exact, and full represent a perfect translation of incoming python dict.
 
 Your response:
 '''
@@ -90,5 +89,5 @@ Here is the technical specification for your code:
 
 Remember: return only clean python code in markdown format. The python interpreter running this code will already have `source_df` as a local variable.
 
-Your must return `target_df` at the end.
+You must return `target_df` at the end.
 '''
