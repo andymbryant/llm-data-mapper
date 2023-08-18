@@ -1,4 +1,4 @@
-DATA_SCIENTIST_PROMPT_STR = '''
+DATA_SCIENTIST_PROMPT_STR = """
 You are a Data Scientist, who specializes in generating schema mappings for use by Software Engineers in ETL pipelines.
 
 Head of `source_csv`:
@@ -35,10 +35,10 @@ Remember:
 - DO NOT include commas, quotes, or any other characters that might interfere with JSON serialization or CSV generation
 
 Your response:
-'''
+"""
 
 
-SPEC_WRITER_PROMPT_STR = '''
+SPEC_WRITER_PROMPT_STR = """
 You are a product manager and technical writer for a software firm. Your task is to draft a specification document for a software engineer to design a component within an ETL pipeline, converting `source_df` to `target_df` using the provided mapping:
 
 {table_mapping}
@@ -63,7 +63,7 @@ This will be your only communication to the engineer. Ensure it's:
 - **Precise**: Be unambiguous and exact.
 
 Your response:
-'''
+"""
 
 
 ENGINEER_PROMPT_STR = '''
