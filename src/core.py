@@ -14,9 +14,10 @@ from src.prompt import (
     SPEC_WRITER_PROMPT_STR,
     ENGINEER_PROMPT_STR,
 )
+
 load_dotenv()
 
-if os.environ.get('DEBUG') == 'true':
+if os.environ.get("DEBUG") == "true":
     os.environ["LANGCHAIN_WANDB_TRACING"] = "true"
     os.environ["WANDB_PROJECT"] = "llm-data-mapper"
 

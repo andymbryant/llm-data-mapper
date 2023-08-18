@@ -9,13 +9,17 @@ from src.core import (
 MAX_ROWS = 10
 
 import pandas as pd
+
+
 def generate_step_markdown(step_number: int, subtitle: str, description: str = None):
     return gr.Markdown(f"# Step {step_number}\n\n ### {subtitle}\n{description}")
 
-example_df = pd.read_csv('./src/data/synthetic/legal_entries_a.csv')
+
+example_df = pd.read_csv("./src/data/synthetic/legal_entries_a.csv")
+
+
 def load_example_template(template_df, example_df):
     return template_df.update(example_df)
-
 
 
 # TODO: use tempfile
@@ -29,7 +33,6 @@ def export_text(content, filename):
     with open(filename, "w") as f:
         f.write(content)
     return gr.File.update(value=filename, visible=True)
-
 
 
 with gr.Blocks() as demo:
@@ -58,7 +61,11 @@ with gr.Blocks() as demo:
             upload_template_btn.upload(
                 fn=process_csv_text, inputs=upload_template_btn, outputs=template_df
             )
-            load_template_btn.click(lambda _: pd.read_csv('./src/data/actual/template.csv'), upload_template_btn, template_df)
+            load_template_btn.click(
+                lambda _: pd.read_csv("./src/data/actual/template.csv"),
+                upload_template_btn,
+                template_df,
+            )
         with gr.Column():
             upload_source_button = gr.UploadButton(
                 label="Upload Source File",
@@ -74,7 +81,11 @@ with gr.Blocks() as demo:
             upload_source_button.upload(
                 fn=process_csv_text, inputs=upload_source_button, outputs=source_df
             )
-            load_source_button.click(lambda _: pd.read_csv('./src/data/actual/table_A.csv'), upload_source_button, source_df)
+            load_source_button.click(
+                lambda _: pd.read_csv("./src/data/actual/table_A.csv"),
+                upload_source_button,
+                source_df,
+            )
 
     # STEP 2
     generate_step_markdown(
