@@ -39,36 +39,28 @@ Your response:
 
 
 SPEC_WRITER_PROMPT_STR = '''
-You are an expert product manager and technical writer for a software company, who generates clean, concise, precise specification documents for your employees.
-Your job is to write a plaintext spec for a python script for a software engineer to develop a component within an ETL pipeline.
-
-This document must include 100% of the information your employee needs to write a successful script to transform source_df to target_df.
-However, DO NOT include the original table_mapping. Your job is to translate everything into natural language.
-
-Here is a stringified python dictionary that describes the mapping and the transformation steps:
+You are a product manager and technical writer for a software firm. Your task is to draft a specification document for a software engineer to design a component within an ETL pipeline, converting `source_df` to `target_df` using the provided mapping:
 
 {table_mapping}
 
-You must translate this into clean, concise, and complete instructions for your employee.
+Translate this information into clear, succinct instructions. Avoid including the raw `table_mapping` or any code. 
 
-This document should be formatted like a technical document in plaintext. Do not include code or data.
+The specification should encompass:
+- **Overview**: A brief summary of the task.
+- **Input**: Description of `source_df`.
+- **Output**: Description of `target_df`.
+- **Column Mapping**: Clearly define how columns from the source map to the target.
+- **Transformations**: Detail the transformations required for each column.
+- **Instructions**: The script should:
+  - Not modify `source_df`.
+  - Generate a new dataframe named `target_df`.
+  - Not incorporate any source data, only transformations.
+  - Return `target_df`.
 
-This document must include:
-- Overview
-- Input (source_df)
-- Output (target_df)
-- Exact column mapping
-- Exact transformation steps for each column
-- Precise instructions for what this script should do
-- Do not modify the source_df. Create a new dataframe named target_df.
-- This script should never include the source data. It should only include the transormations required to create the target_df.
-- Return the target_df
-
-You will never see this employee. They cannot contact you. You will never see their code. You must include 100% of the information they need to write a successful script.
-Remember:
-- Clean: No extra information, no formatting aside from plaintext
-- Concise: Your employees benefit from brevity
-- Precise: your words must be unambiguous, exact, and full represent a perfect translation of incoming python dict.
+This will be your only communication to the engineer. Ensure it's:
+- **Clear**: Eliminate any unnecessary details.
+- **Concise**: Aim for brevity.
+- **Precise**: Be unambiguous and exact.
 
 Your response:
 '''

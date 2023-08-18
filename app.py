@@ -3,39 +3,32 @@ from src.core import get_table_mapping, transform_source, process_csv_text, gene
 
 MAX_ROWS = 10
 
-def export_csv(d):
-    filepath = "output.csv"
-    d.to_csv(filepath)
-    return gr.File.update(value=filepath, visible=True)
-
 def generate_step_markdown(step_number: int, subtitle: str, description: str = None):
     return gr.Markdown(f"# Step {step_number}\n\n ### {subtitle}\n{description}")
 
+# TODO: use tempfile
 def export_csv(df, filename):
     df.to_csv(filename, index=False)
     return gr.File.update(value=filename, visible=True)
 
+# TODO: use tempfile
 def export_text(val, filename):
     with open(filename, "w") as f:
         f.write(val)
     return gr.File.update(value=filename, visible=True)
 
-def export_transformed_source(d):
-    filename = "transformed_source.csv"
-    d.to_csv(filename)
-    return gr.File.update(value=filename, visible=True)
-
 with gr.Blocks() as demo:
+    gr.Markdown("# LLM Data Mapper\nThis is a LacThis is a demo of the LangChain platform. It is a tool for generating python code from natural language prompts. This demo is a simple ETL pipeline, where you upload a source CSV and a template CSV, and then generate python code to transform the source CSV into the template CSV. This is a simple example, but the platform can be used for much more complex tasks, such as generating python code from a natural language specification document.")
     # STEP 1
-    generate_step_markdown(1, "Upload a Template CSV (target schema) and a Source CSV.")
+    generate_step_markdown(1, "Upload a Template CSV and a Source CSV.", "The schema will be extracted from the template file and the source file will be transformed to match the schema.")
     with gr.Row():
         with gr.Column():
             upload_template_btn = gr.UploadButton(label="Upload Template File", file_types = ['.csv'], live=True, file_count = "single")
-            template_df = gr.Dataframe(max_rows=MAX_ROWS)
+            template_df = gr.Dataframe(max_rows=MAX_ROWS, interactive=False)
             upload_template_btn.upload(fn=process_csv_text, inputs=upload_template_btn, outputs=template_df)
         with gr.Column():
             upload_source_button = gr.UploadButton(label="Upload Source File", file_types = ['.csv'], live=True, file_count = "single")
-            source_df = gr.Dataframe(max_rows=MAX_ROWS)
+            source_df = gr.Dataframe(max_rows=MAX_ROWS, interactive=False)
             upload_source_button.upload(fn=process_csv_text, inputs=upload_source_button, outputs=source_df)
     
     # STEP 2
@@ -75,8 +68,7 @@ with gr.Blocks() as demo:
     with gr.Row():
         transform_btn = gr.Button(value="Transform Source", variant="primary")
     with gr.Row():
-        gr.Markdown("Source (transformed)")
-        source_df_transformed = gr.Dataframe(label="Source Transformed", max_rows=MAX_ROWS)
+        source_df_transformed = gr.Dataframe(label="Source (transformed)", max_rows=MAX_ROWS)
         transform_btn.click(transform_source, inputs=[source_df, code_block], outputs=[source_df_transformed])
 
     with gr.Row():
