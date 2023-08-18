@@ -8,12 +8,11 @@ def export_csv(d):
     d.to_csv(filepath)
     return gr.File.update(value=filepath, visible=True)
 
-
-def generate_step_markdown(step_number: int, subtitle: str):
-    return gr.Markdown(f"# Step {step_number}\n\n ### {subtitle}")
+def generate_step_markdown(step_number: int, subtitle: str, description: str = None):
+    return gr.Markdown(f"# Step {step_number}\n\n ### {subtitle}\n{description}")
 
 def export_csv(df, filename):
-    df.to_csv(filename)
+    df.to_csv(filename, index=False)
     return gr.File.update(value=filename, visible=True)
 
 def export_text(val, filename):
@@ -40,7 +39,7 @@ with gr.Blocks() as demo:
             upload_source_button.upload(fn=process_csv_text, inputs=upload_source_button, outputs=source_df)
     
     # STEP 2
-    generate_step_markdown(2, "Generate mapping from Source to Template. Once generated, you can edit the values directly in the table below.")
+    generate_step_markdown(2, "Generate mapping from Source to Template.", "Once generated, you can edit the values directly in the table below and they will be incorporated into the mapping logic.")
     with gr.Row():
         generate_mapping_btn = gr.Button(value="Generate Mapping", variant="primary")
     with gr.Row():
@@ -56,7 +55,7 @@ with gr.Blocks() as demo:
         mapping_file.change(lambda x: x, mapping_file, table_mapping_df)
     
     # STEP 3
-    generate_step_markdown(3, "Generate python code to transform Source to Template, using the generated mapping.")
+    generate_step_markdown(3, "Generate python code to transform Source to Template, using the generated mapping.", "Once generated, you can edit the code directly in the code block below and it will be incorporated into the transformation logic. And this is re-runnable! Update the mapping logic above to try it out.")
     with gr.Row():
         generate_code_btn = gr.Button(value="Generate Code from Mapping", variant="primary")
     with gr.Row():
@@ -72,7 +71,7 @@ with gr.Blocks() as demo:
         code_file.change(lambda x: x, code_file, code_block)
 
     # STEP 4
-    generate_step_markdown(4, "Transform the Source CSV into the Template CSV using the generated code.")
+    generate_step_markdown(4, "Transform the Source CSV into the Template CSV using the generated code.", "And this is re-runnable! Update the logic above to try it out.")
     with gr.Row():
         transform_btn = gr.Button(value="Transform Source", variant="primary")
     with gr.Row():
