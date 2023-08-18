@@ -1,1 +1,0 @@
-NUM_ROWS_TO_RETURN = 5

@@ -1,0 +1,4 @@
+[34m[1mwandb[39m[22m: Streaming LangChain activity to W&B at https://wandb.ai/andymbryant/llm-data-mapper/runs/kjjs8g59
+[34m[1mwandb[39m[22m: `WandbTracer` is currently in beta.
+[34m[1mwandb[39m[22m: Please report any issues to https://github.com/wandb/wandb/issues with the tag `langchain`.
+Keyboard interruption in main thread... closing server.

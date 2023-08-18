@@ -41,7 +41,6 @@ with gr.Blocks() as demo:
             upload_template_btn = gr.UploadButton(
                 label="Upload Template File",
                 file_types=[".csv"],
-                live=True,
                 file_count="single",
             )
             template_df = gr.Dataframe(max_rows=MAX_ROWS, interactive=False)
@@ -52,7 +51,6 @@ with gr.Blocks() as demo:
             upload_source_button = gr.UploadButton(
                 label="Upload Source File",
                 file_types=[".csv"],
-                live=True,
                 file_count="single",
             )
             source_df = gr.Dataframe(max_rows=MAX_ROWS, interactive=False)

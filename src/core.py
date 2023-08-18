@@ -9,15 +9,18 @@ from langchain.chat_models import ChatOpenAI
 from langchain.schema.output_parser import StrOutputParser
 from langchain.chat_models import ChatOpenAI
 from src.types import TableMapping
-from src.vars import NUM_ROWS_TO_RETURN
 from src.prompt import (
     DATA_SCIENTIST_PROMPT_STR,
     SPEC_WRITER_PROMPT_STR,
     ENGINEER_PROMPT_STR,
 )
 
+os.environ["LANGCHAIN_WANDB_TRACING"] = "true"
+os.environ["WANDB_PROJECT"] = "llm-data-mapper"
+
 load_dotenv()
 
+NUM_ROWS_TO_RETURN = 5
 DATA_DIR_PATH = os.path.join(os.path.dirname(__file__), "data")
 SYNTHETIC_DATA_DIR_PATH = os.path.join(DATA_DIR_PATH, "synthetic")
 
