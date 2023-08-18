@@ -14,11 +14,12 @@ from src.prompt import (
     SPEC_WRITER_PROMPT_STR,
     ENGINEER_PROMPT_STR,
 )
-
-os.environ["LANGCHAIN_WANDB_TRACING"] = "true"
-os.environ["WANDB_PROJECT"] = "llm-data-mapper"
-
 load_dotenv()
+
+if os.environ.get('DEBUG') == 'true':
+    os.environ["LANGCHAIN_WANDB_TRACING"] = "true"
+    os.environ["WANDB_PROJECT"] = "llm-data-mapper"
+
 
 NUM_ROWS_TO_RETURN = 5
 DATA_DIR_PATH = os.path.join(os.path.dirname(__file__), "data")
